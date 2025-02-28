@@ -12,18 +12,18 @@ import "./index.css";
 
 
 const App: React.FC = () => {
-  const [ProductCoupled, setProductCoupled] = useState<React.FC>();
+  const [ProductCoupledView, setProductCoupledView] = useState<React.FC>();
 
   const importProductCoupled =  () => {
     const ProductCoupledModule = React.lazy( async() => {
       try{
-        return await import("productList/productCoupled");
+        return await import("productList/ProductCoupledView");
       } catch (error) {
         return import("./error/Error");
       }
     });
     try {
-      setProductCoupled(ProductCoupledModule);
+      setProductCoupledView(ProductCoupledModule);
     } catch (error) {
       console.error("Failed to import ProductCoupled:", error);
     }
@@ -51,7 +51,7 @@ const App: React.FC = () => {
     <div>
       <Header/>
       <Suspense fallback={<Spinner/>}>
-         {ProductCoupled ?  <ProductCoupled/> : <Spinner/> }
+         {ProductCoupledView ?  <ProductCoupledView/> : <Spinner/> }
       </Suspense>
     </div>
   );

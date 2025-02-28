@@ -2,7 +2,7 @@ export const mfConfig = {
   name: "product_list",
   filename: "remoteEntry.js",
   exposes: {
-    "./productCoupled": "./src/productCoupled/productCoupled",
+    "./ProductCoupledView": "./src/productCoupledView/ProductCoupledView",
   },
   remotes: {
     mainApp: "main_app@http://localhost:3000/remoteEntry.js",

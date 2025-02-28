@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import ProductCoupled from "./productCoupled/productCoupled";
+import ProductCoupled from "./productCoupledView/ProductCoupledView";
 
 import "./index.css";
 

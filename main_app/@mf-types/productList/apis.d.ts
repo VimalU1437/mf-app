@@ -1,3 +1,3 @@
 
-    export type RemoteKeys = 'productList/productCoupled';
-    type PackageType<T> = T extends 'productList/productCoupled' ? typeof import('productList/productCoupled') :any;
+    export type RemoteKeys = 'productList/ProductCoupledView';
+    type PackageType<T> = T extends 'productList/ProductCoupledView' ? typeof import('productList/ProductCoupledView') :any;
