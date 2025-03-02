@@ -5,10 +5,15 @@ import Spinner from "mainApp/spinner";
 import { observer } from "mobx-react-lite";
 
 const ProductList: React.FC = observer(() => {
+  const { isProductViewLoading, productList, addProductInCart, setProductViewValue } = sharedStore;
   const onClickOneProduct = (product: Product) => {
-    sharedStore.setProductViewValue(product);
+    setProductViewValue(product);
   };
-  const { isProductViewLoading, productList } = sharedStore;
+
+  const addToCart = ( event: React.MouseEvent<HTMLButtonElement, MouseEvent>, product: Product) => {
+    event.stopPropagation();
+    addProductInCart(product);
+  };
 
   return (
     <div className="w-1/2">
@@ -46,10 +51,7 @@ const ProductList: React.FC = observer(() => {
                 {product.stock > 0 ? "In Stock" : "Out of Stock"}
               </p>
               <button
-                onClick={(event) => {
-                  event.stopPropagation();
-                  alert("Not implemented");
-                }}
+                onClick={(event) => addToCart(event, product)}
                 className="mt-4 w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700"
               >
                 Add to Cart

@@ -9,6 +9,7 @@ export const mfConfig = {
   },
   shared: {
     vue: { singleton: true, eager: true, requiredVersion: "3.2.19" },
+    'mobx': { singleton: true, eager: true, requiredVersion: "6.13.6" },
     'mobx-vue-lite': { singleton: true, eager: true, requiredVersion: "0.4.3" },
   },
 };

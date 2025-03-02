@@ -73,7 +73,6 @@ export default {
         () => sharedStore.productViewValue,
         (newValue) => {
           // Force Vue to re-render when the MobX store changes
-          console.log('Product updated:', newValue);
           product.value = newValue;
         }
       );
@@ -85,7 +84,7 @@ export default {
     });
 
     const addToCart = () => {
-        alert("Not implemented");
+        sharedStore.addProductInCart(product.value);
     };
 
     return {

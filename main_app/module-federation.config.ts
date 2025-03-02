@@ -9,6 +9,7 @@ export const mfConfig = {
   },
   remotes: {
     productList: "product_list@http://localhost:3001/remoteEntry.js",
+    cart: "cart@http://localhost:3004/remoteEntry.js",
   },
   shared: {
     react: { singleton: true, eager: true, requiredVersion: "18.3.1"}, // Singleton for React
@@ -18,6 +19,7 @@ export const mfConfig = {
       strictVersion: true,
       eager: true,
     },
+    "react-router-dom": { singleton: true, eager: true, requiredVersion: "7.2.0"}, 
     "./src/store/mobXstore": {}
   },
 };
